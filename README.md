@@ -1,12 +1,5 @@
 # react-native-auth-session-plugin
 
-react-native-auth-session-plugin
-
-## Installation
-
-
-# react-native-auth-session-plugin
-
 This React Native plugin enables secure **biometric authentication** followed by **web-based login or logout flows**, using native modules on **iOS** and **Android**. It's perfect for OAuth services like Auth0, where biometric verification is required before redirecting the user to an authentication session.
 
 ## Features
@@ -63,13 +56,13 @@ RNAuthSessionPlugin.logout(
 
 ```
 
-If your plugin is locally added or manually created, ensure:
-  1. iOS: RNAuthSessionPlugin.swift is added to your Xcode project.
-  2. Android: Add the Java module in your app’s package structure and register it in MainApplication.java.
+### If your plugin is locally added or manually created, ensure:
+    1. iOS: RNAuthSessionPlugin.swift is added to your Xcode project.
+    2. Android: Add the Java module in your app’s package structure and register it in MainApplication.java.
 
-2. iOS Setup
-Info.plist
-Add your app's custom URL scheme:
+### 2. iOS Setup
+    1. Info.plist
+    2. Add your app's custom URL scheme:
 
 ```xml
 <key>CFBundleURLTypes</key>
@@ -90,9 +83,9 @@ Run:
 npx pod-install
 
 ```
-3. Android Setup
-  1. AndroidManifest.xml
-  2. Add an intent filter in your <activity> (usually inside MainActivity):
+### 3. Android Setup
+    1. AndroidManifest.xml
+    2. Add an intent filter in your <activity> (usually inside MainActivity):
 ```xml
 
 <intent-filter>
@@ -108,13 +101,13 @@ npx pod-install
 No additional permissions are required, but biometric support depends on the device.
 
 ## Platform Details
-  iOS
+  ### iOS
     1. Uses LocalAuthentication for biometrics
     2. Opens URLs via ASWebAuthenticationSession
     3. The callback scheme is handled securely by the OS
     4. iOS 13+ required
 
-  Android
+  ### Android
     1. Uses BiometricPrompt for biometric check
     2. Opens URLs using CustomTabsIntent (Chrome Custom Tabs)
     3. Callback is handled through deep linking (intent filters)
