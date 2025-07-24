@@ -1,0 +1,3 @@
+
+import AuthSessionPlugin from './RNAuthSessionPlugin';
+export default AuthSessionPlugin;
