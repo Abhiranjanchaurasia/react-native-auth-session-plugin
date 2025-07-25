@@ -4,10 +4,11 @@ This React Native plugin enables secure **biometric authentication** followed by
 
 ## Features
 
-✅ Biometric authentication (Face ID / Touch ID / Fingerprint)
-✅ Secure OAuth login via native browser (ASWebAuthenticationSession / CustomTabsIntent)
-✅ Support for custom callback URL schemes
-✅ Works on both iOS and Android
+
+- Biometric authentication (Face ID / Touch ID / Fingerprint)
+- Secure OAuth login via native browser (ASWebAuthenticationSession / CustomTabsIntent)
+- Support for custom callback URL schemes
+- Works on both iOS and Android
 
 ---
 
@@ -17,11 +18,12 @@ This React Native plugin enables secure **biometric authentication** followed by
 npm install react-native-auth-session-plugin
 ```
 
+
 ### 1. Link Native Code
 
 Make sure the native modules are added in both the iOS and Android projects.
 
-If you're not using autolinking, do:
+If you're not using autolinking, run:
 
 ```bash
 npx react-native link react-native-auth-session-plugin
@@ -56,13 +58,17 @@ RNAuthSessionPlugin.logout(
 
 ```
 
+
 ### If your plugin is locally added or manually created, ensure:
-    1. iOS: RNAuthSessionPlugin.swift is added to your Xcode project.
-    2. Android: Add the Java module in your app’s package structure and register it in MainApplication.java.
+
+1. **iOS:** `RNAuthSessionPlugin.swift` is added to your Xcode project.
+2. **Android:** Add the Java module in your app’s package structure and register it in `MainApplication.java`.
+
 
 ### 2. iOS Setup
-    1. Info.plist
-    2. Add your app's custom URL scheme:
+
+1. Update your `Info.plist`.
+2. Add your app's custom URL scheme:
 
 ```xml
 <key>CFBundleURLTypes</key>
@@ -76,16 +82,20 @@ RNAuthSessionPlugin.logout(
 </array>
 
 ```
-## CocoaPods
+
+### CocoaPods
+
 Run:
 
 ```bash
 npx pod-install
 
 ```
+
 ### 3. Android Setup
-    1. AndroidManifest.xml
-    2. Add an intent filter in your <activity> (usually inside MainActivity):
+
+1. Update your `AndroidManifest.xml`.
+2. Add an intent filter in your `<activity>` (usually inside `MainActivity`):
 ```xml
 
 <intent-filter>
@@ -97,25 +107,31 @@ npx pod-install
 
 ```
 
+
 ## Permissions
+
 No additional permissions are required, but biometric support depends on the device.
 
-## Platform Details
-  ### iOS
-    1. Uses LocalAuthentication for biometrics
-    2. Opens URLs via ASWebAuthenticationSession
-    3. The callback scheme is handled securely by the OS
-    4. iOS 13+ required
 
-  ### Android
-    1. Uses BiometricPrompt for biometric check
-    2. Opens URLs using CustomTabsIntent (Chrome Custom Tabs)
-    3. Callback is handled through deep linking (intent filters)
-  
+## Platform Details
+
+### iOS
+1. Uses LocalAuthentication for biometrics
+2. Opens URLs via ASWebAuthenticationSession
+3. The callback scheme is handled securely by the OS
+4. iOS 13+ required
+
+### Android
+1. Uses BiometricPrompt for biometric check
+2. Opens URLs using CustomTabsIntent (Chrome Custom Tabs)
+3. Callback is handled through deep linking (intent filters)
+
+
 ## Troubleshooting
-    1. Ensure biometric hardware is available and enrolled
-    2. Ensure your redirect URI is registered in both the Auth0 dashboard and native app config
-    3. For Android, ensure Chrome is available (for Custom Tabs)
+
+1. Ensure biometric hardware is available and enrolled.
+2. Ensure your redirect URI is registered in both the Auth0 dashboard and native app config.
+3. For Android, ensure Chrome is available (for Custom Tabs).
 
 ## Contributing
 
