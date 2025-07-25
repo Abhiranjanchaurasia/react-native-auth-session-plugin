@@ -37,7 +37,7 @@ export default function App() {
       <Button title="Login with Auth0" onPress={handleLogin} />
       <Button title="Logout" onPress={handleLogout} />
       {result && <Text>Callback URL: {result}</Text>}
-      {error && <Text style={{ color: 'red' }}>{error}</Text>}
+      {error && <Text style={styles.errorText}>{error}</Text>}
     </View>
   );
 }
@@ -47,5 +47,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  errorText: {
+    color: 'red',
   },
 });
